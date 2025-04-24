@@ -1,0 +1,259 @@
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/500.css';
+@import '@fontsource/playfair-display/700.css';
+@import '@fontsource/montserrat/400.css';
+@import '@fontsource/montserrat/500.css';
+@import '@fontsource/montserrat/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #d4af37;
+  --light-gold: #f9f295;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-montserrat text-gray-800 bg-gradient-to-b from-lavender-50 to-lavender-100 min-h-screen;
+  overflow-x: hidden;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #9271f2, #f44086);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient {
+  background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.chess-piece-bg {
+  position: absolute;
+  font-size: 4rem;
+  opacity: 0.1;
+  color: #9271f2;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+
+.cake-container {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.cake {
+  position: relative;
+  width: 250px;
+  height: 120px;
+  background: #f9c7e5;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 4px 0 0 #e4a9c7;
+}
+
+.cake::before {
+  content: '';
+  position: absolute;
+  width: 240px;
+  height: 40px;
+  background: #fbe2f0;
+  top: 40px;
+  left: 5px;
+  border-radius: 5px;
+}
+
+.cake::after {
+  content: '';
+  position: absolute;
+  width: 240px;
+  height: 40px;
+  background: #fbe2f0;
+  bottom: 40px;
+  left: 5px;
+  border-radius: 5px;
+}
+
+.candle {
+  position: absolute;
+  width: 20px;
+  height: 50px;
+  background: linear-gradient(to bottom, #fff, #ffef92);
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px 10px 0 0;
+  z-index: 10;
+}
+
+.candle::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 15px;
+  background: #333;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.flame {
+  position: absolute;
+  width: 16px;
+  height: 30px;
+  background: linear-gradient(to bottom, #ff9d00, #ff0000);
+  border-radius: 50% 50% 20% 20%;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(1px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.flame.lit {
+  opacity: 1;
+}
+
+.flame::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ffff00;
+  border-radius: 50%;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.plate {
+  position: absolute;
+  width: 270px;
+  height: 40px;
+  background: #e0e0e0;
+  bottom: -20px;
+  left: -10px;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.photo-gallery {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.gallery-slide {
+  min-width: 100%;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-slide:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-indicator.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-20px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9271f2, #f44086);
+  display: flex;
+  align-items: center;
+  justify-center: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+}

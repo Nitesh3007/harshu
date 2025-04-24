@@ -1,0 +1,8 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M50 10C50 10 45 25 30 25C15 25 15 40 15 40V70C15 75 20 80 25 80H75C80 80 85 75 85 70V40C85 40 85 25 70 25C55 25 50 10 50 10Z" fill="#F9C7E5"/>
+  <path d="M25 55H75V65H25V55Z" fill="#FBE2F0"/>
+  <path d="M25 40H75V50H25V40Z" fill="#FBE2F0"/>
+  <path d="M50 10V25" stroke="#333" stroke-width="2"/>
+  <circle cx="50" cy="5" r="5" fill="#FF9D00"/>
+  <ellipse cx="50" cy="85" rx="35" ry="5" fill="#E0E0E0"/>
+</svg>
